@@ -66,7 +66,7 @@ void bptree::insertinternal(int n, node *cursor, node *newleaf)
         auto it = find(cursor->keys.begin(), cursor->keys.end(), n);
         int i = it - cursor->keys.begin();
         cursor->ptr.push_back(dump);
-        for (int j = cursor->ptr.size(); j > i + 1; j--)
+        for (int j = cursor->ptr.size() - 1; j > i + 1; j--)
         {
             cursor->ptr[j] = cursor->ptr[j - 1];
         }
